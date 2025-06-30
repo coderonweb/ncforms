@@ -1,0 +1,2483 @@
+<!-- Progress Bar -->
+<div id="progress-container" style="margin-bottom: 20px;">
+	<div id="progress-bar" style="height: 20px; background-color: #4caf50; width: 0%; transition: width 0.3s;"></div>
+</div>
+<!--Login Form-->
+<div id="step1" class="step-form">
+	<div class="form-container">
+		<div class="form-header">
+			<h3>Registration</h3>
+			<p>Step 01 of 06</p>
+		</div>
+		<div class="form-body">
+			<div class="login-holder-1">
+				<a class="ax-cog-button-1" href="#">
+					<img src="https://nationalcourses.edu.au/wp-content/plugins/ax_plugin/enrollerWidget/widget/images/loginproviders/google_logo.png" alt="Log in with Google" style="height: 18px; width: auto; margin-right: 12px;">
+					<span style="line-height: 16px; font-size: 14px; font-weight: 600; white-space: nowrap; color: rgb(32, 55, 75);">Continue with Google</span>
+				</a>
+				<a class="ax-cog-button-1" href="#">
+					<img src="https://nationalcourses.edu.au/wp-content/plugins/ax_plugin/enrollerWidget/widget/images/loginproviders/apple_logo.png" alt="Log in with Apple" style="height: 18px; width: auto; margin-right: 12px;">
+					<span style="line-height: 16px; font-size: 14px; font-weight: 600; white-space: nowrap; color: rgb(32, 55, 75);">Continue with Apple</span>
+				</a>
+				<a class="ax-cog-button-1" href="#">
+					<img src="https://nationalcourses.edu.au/wp-content/plugins/ax_plugin/enrollerWidget/widget/images/loginproviders/facebook_logo.png" alt="Log in with Facebook" style="height: 18px; width: auto; margin-right: 12px;">
+					<span style="line-height: 16px; font-size: 14px; font-weight: 600; white-space: nowrap; color: rgb(32, 55, 75);">Continue with Facebook</span>
+				</a>
+				<a class="ax-cog-button-1" href="#">
+					<img src="https://nationalcourses.edu.au/wp-content/plugins/ax_plugin/enrollerWidget/widget/images/loginproviders/axcelerate_logo.png" alt="Log in with aXcelerate" style="height: 18px; width: auto; margin-right: 12px;">
+					<span style="line-height: 16px; font-size: 14px; font-weight: 600; white-space: nowrap; color: rgb(32, 55, 75);">Continue with aXcelerate</span>
+				</a>
+				<div style="margin-top:30px">
+					<span class="login-blurb" style="color: rgb(119, 119, 119); font-weight: 600; margin-top: 8px; font-size: 12px; display: block;"> Login Powered by <a href="https://axcelerate.com">aXcelerate Student Management System</a>
+					</span>
+				</div>
+			</div>
+			<div class="or-continue-with" style="margin-bottom: 12px; font-style: italic; margin-top:15px;">Or continue with your name and email</div>
+			<form class="detailsForm">
+				<div class="form-group row dataInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Given Name: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="create_GIVENNAME" name="create_GIVENNAME">
+					</div>
+				</div>
+				<div class="form-group row dataInfo">
+					<label for="familyName" class="col-sm-3 col-form-label">Family Name: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="create_FAMILYNAME" name="create_FAMILYNAME">
+					</div>
+				</div>
+				<div class="form-group row dataInfo">
+					<label for="email" class="col-sm-3 col-form-label">Email: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="60" type="email" id="create_EMAILADDRESS" name="create_EMAILADDRESS">
+						<div class="enroller-error-message-email" style="display:none;">Email is not of a valid format.</div>
+					</div>
+				</div>
+				<div class="form-group row dataInfo">
+					<label for="cofirmEmail" class="col-sm-3 col-form-label">Confirm Email: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="60" type="text" id="create_CONFIRM_EMAILADDRESS" name="create_CONFIRM_EMAILADDRESS">
+						<div class="enroller-error-message-confirm" style="display:none;">Emails do not match.</div>
+					</div>
+				</div>
+				<div class="form-group row dataInfo">
+					<div class="col-sm-3"></div>
+					<div class="customButton col-sm-8">
+						<button type="submit" class="buttonCreate ui-icon-plus" id="buttonPrivateCreate">Create </button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--End of Login Step-->
+<!--Personal Details-->
+<div id="step2" class="step-form">
+	<div class="form-container">
+		<div class="form-header">
+			<h2>Personal Details</h2>
+			<p>Step 02 of 06</p>
+		</div>
+		<div class="form-body contact-update" id="contactGeneral_step">
+			<form class="personalDetailsForm" method="PUT">
+				<div class="form-group row personalInfo">
+					<label for="titleData" class="col-sm-3 col-form-label">Title: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="TITLE" required="required" id="TITLE" style="">
+								<option value="">Select</option>
+								<option value="Mr">Mr</option>
+								<option value="Mrs">Mrs</option>
+								<option value="Ms">Ms</option>
+								<option value="Miss">Miss</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 ">Given Name: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="GIVENNAME" name="GIVENNAME" required>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Preffered Name:</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="PREFERREDNAME" name="PREFERREDNAME" required>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Middle Name:</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="MIDDLENAME" name="MIDDLENAME" required>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Last Name: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="40" type="text" id="SURNAME" name="SURNAME" required>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Date of Birth: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" type="text" id="DOB" name="DOB" placeholder="Select Date..." readonly>
+					</div>
+				</div>
+				<div class="post_enrol_information">
+					<div class="post_enrol_layout">
+						<p>If you have not yet obtained a USI you can apply for it directly at <a target="_blank" href="https://www.usi.gov.au/your-usi/create-usi">https://www.usi.gov.au/your-usi/create-usi</a> on computer or mobile device. </p>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="givenName" class="col-sm-3 col-form-label">Unique Student Identifier: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8 d-flex">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" tabindex="8" pattern="[2-9A-HJ-NP-Za-hj-np-z]{10}" title="10 Characters no 1, 0, O or I" maxlength="10" type="text" id="USI" name="USI" required>
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-7" class="has-close ax-tip d-none">
+								<p style="margin:0;"> From 1 January 2015, we can be prevented from issuing you with a nationally recognised VET qualification or statement of attainment when you complete your course if you do not have a Unique Student Identifier (USI). In addition, we are required to include your USI in the data we submit to NCVER. If you have not yet obtained a USI you can apply for it directly at <a target="_blank" href="https://www.usi.gov.au/your-usi/create-usi">https://www.usi.gov.au/your-usi/create-usi</a> on computer or mobile device. Please note that if you would like to specify your gender as 'other' you will need to contact the USI Office for assistance. </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-7">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-7 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="usi-warning-message" style="margin-left: 12em;">
+						<div class="enroller-error-message-usi " style="display:none;"> Validation Error. <br> USI is not valid </div>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="titleData" class="col-sm-3 col-form-label">Gender: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" name="SEX" id="SEX" style="" required>
+								<option value="">Select</option>
+								<option value="M">Male</option>
+								<option value="F">Female</option>
+								<option value="X">Other</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="info-field-detailed header_information">Contact Details</div>
+				<div class="form-group row personalInfo">
+					<label for="email" class="col-sm-3 col-form-label">Email: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8 d-flex">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="60" type="email" id="EMAILADDRESS" name="EMAILADDRESS" required>
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-8" class="has-close ax-tip d-none">
+								<p style="margin:0;"> A contact email address </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-8">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-8 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="usi-warning-message" style="margin-left: 12em; margin-top: -5px; margin-bottom:5px;">
+						<div class="enroller-error-message" style="display:none;">Email is not of a valid format.</div>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<label for="phoneNumber" class="col-sm-3 col-form-label">Mobile: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" title="Mobile numbers must be numeric, 10 characters and contain no spaces." data-wrapper-class="ui-btn" required="required" maxlength="10" type="text" id="MOBILEPHONE" name="MOBILEPHONE" required>
+						<div class="enroller-error-message-phone" style="display:none;">Mobile numbers must be numeric, 10 characters and contain no spaces.</div>
+					</div>
+				</div>
+				<div class="form-group row personalInfo">
+					<div class="col-sm-3"></div>
+					<div class="customButton col-sm-8">
+						<button type="submit" class="buttonPersonal ui-icon-plus" id="button_personal">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--End of Personal Details-->
+<!--Address Form Stated-->
+<div id="step3" class="step-form">
+	<div class="form-container">
+		<div class="form-header">
+			<h2>Address</h2>
+			<p>Step 03 of 06</p>
+		</div>
+		<div class="form-body contact-update" id="contactAddress_step">
+			<div class="info-field-detailed header_information">Usual Residential Address</div>
+			<form class="addressForm" method="PUT">
+				<div class="ResidenceInfo_info_expandable">
+					<div class="enroller-blurb-holder ui-btn ui-btn-icon-left ui-icon-info info_expandable" style="padding-top: 0px; padding-bottom: 0px;">
+						<div style="border: 0px; padding: 0.5em; background: transparent; text-align: left;"> Please provide the physical address (street number and name not post office box) where you usually reside rather than any temporary address at which you reside for training, work, or other purposes before returning to your home. If you are from a rural area, use the address from your state or territory’s ‘rural property addressing’ or ‘numbering’ system as your residential street address. </div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="buildingName" class="col-sm-3 col-form-label">Building/property name: </label>
+					<div class="col-sm-8 d-flex">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="50" type="text" id="SBUILDINGNAME" name="SBUILDINGNAME">
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-5" class="has-close ax-tip d-none">
+								<p style="margin:0;"> Building/property name is the official place name or common usage name for an address site, including the name of a building, Aboriginal community, homestead, building complex, agricultural property, park or unbounded address site. </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-5">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-5 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="unitName" class="col-sm-3 col-form-label">Flat/unit details: </label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="30" type="text" id="SUNITNO" name="SUNITNO">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="streetorlotName" class="col-sm-3 col-form-label">Street or lot number: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="15" type="text" id="SSTREETNO" name="SSTREETNO">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="streetName" class="col-sm-3 col-form-label">Street Name: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="70" type="text" id="SSTREETNAME" name="SSTREETNAME">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Suburb, locality or town: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="50" type="text" id="SCITY" name="SCITY">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Postcode: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="10" type="text" id="SPOSTCODE" name="SPOSTCODE">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">State/Teritory: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="SSTATE" required="required" id="SSTATE" style="">
+								<option value="">Select</option>
+								<option value="NSW">NSW</option>
+								<option value="VIC">VIC</option>
+								<option value="QLD">QLD</option>
+								<option value="SA">SA</option>
+								<option value="WA">WA</option>
+								<option value="TAS">TAS</option>
+								<option value="NT">NT</option>
+								<option value="ACT">ACT</option>
+								<option value="OTH">Other Australian Territory</option>
+								<option value="OVS">Overseas</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Country: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" class="countrySelect enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" required="required" id="SCOUNTRYID" style="">
+								<option value="">Select</option>
+								<option value="1601">Adelie Land (France)</option>
+								<option value="7201">Afghanistan</option>
+								<option value="2408">Aland Islands</option>
+								<option value="3201">Albania</option>
+								<option value="4101">Algeria</option>
+								<option value="3101">Andorra</option>
+								<option value="9201">Angola</option>
+								<option value="8401">Anguilla</option>
+								<option value="8402">Antigua and Barbuda</option>
+								<option value="8201">Argentina</option>
+								<option value="1602">Argentinian Antarctic Territory</option>
+								<option value="7202">Armenia</option>
+								<option value="8403">Aruba</option>
+								<option value="1101">Australia</option>
+								<option value="1603">Australian Antarctic Territory</option>
+								<option value="2301">Austria</option>
+								<option value="7203">Azerbaijan</option>
+								<option value="8404">Bahamas</option>
+								<option value="4201">Bahrain</option>
+								<option value="7101">Bangladesh</option>
+								<option value="8405">Barbados</option>
+								<option value="3301">Belarus</option>
+								<option value="2302">Belgium</option>
+								<option value="8301">Belize</option>
+								<option value="9101">Benin</option>
+								<option value="8101">Bermuda</option>
+								<option value="7102">Bhutan</option>
+								<option value="8202">Bolivia</option>
+								<option value="8433">Bonaire, Sint Eustatius and Saba</option>
+								<option value="3202">Bosnia and Herzegovina</option>
+								<option value="9202">Botswana</option>
+								<option value="8203">Brazil</option>
+								<option value="1604">British Antarctic Territory</option>
+								<option value="5201">Brunei Darussalam</option>
+								<option value="3203">Bulgaria</option>
+								<option value="9102">Burkina Faso</option>
+								<option value="9203">Burundi</option>
+								<option value="5102">Cambodia</option>
+								<option value="9103">Cameroon</option>
+								<option value="8102">Canada</option>
+								<option value="9104">Cape Verde</option>
+								<option value="8406">Cayman Islands</option>
+								<option value="9105">Central African Republic</option>
+								<option value="9106">Chad</option>
+								<option value="8204">Chile</option>
+								<option value="1605">Chilean Antarctic Territory</option>
+								<option value="6101">China (excludes SARs and Taiwan)</option>
+								<option value="8205">Colombia</option>
+								<option value="9204">Comoros</option>
+								<option value="9108">Congo, Democratic Republic of</option>
+								<option value="9107">Congo, Republic of</option>
+								<option value="1501">Cook Islands</option>
+								<option value="8302">Costa Rica</option>
+								<option value="9111">Cote d'Ivoire</option>
+								<option value="3204">Croatia</option>
+								<option value="8407">Cuba</option>
+								<option value="8434">Curacao</option>
+								<option value="3205">Cyprus</option>
+								<option value="3302">Czech Republic</option>
+								<option value="2401">Denmark</option>
+								<option value="9205">Djibouti</option>
+								<option value="8408">Dominica</option>
+								<option value="8411">Dominican Republic</option>
+								<option value="8206">Ecuador</option>
+								<option value="4102">Egypt</option>
+								<option value="8303">El Salvador</option>
+								<option value="2102">England</option>
+								<option value="9112">Equatorial Guinea</option>
+								<option value="9206">Eritrea</option>
+								<option value="3303">Estonia</option>
+								<option value="9207">Ethiopia</option>
+								<option value="8207">Falkland Islands</option>
+								<option value="2402">Faroe Islands</option>
+								<option value="1502">Fiji</option>
+								<option value="2403">Finland</option>
+								<option value="2303">France</option>
+								<option value="8208">French Guiana</option>
+								<option value="1503">French Polynesia</option>
+								<option value="9113">Gabon</option>
+								<option value="9114">Gambia</option>
+								<option value="7204">Georgia</option>
+								<option value="2304">Germany</option>
+								<option value="9115">Ghana</option>
+								<option value="3102">Gibraltar</option>
+								<option value="3207">Greece</option>
+								<option value="2404">Greenland</option>
+								<option value="8412">Grenada</option>
+								<option value="8413">Guadeloupe</option>
+								<option value="1401">Guam</option>
+								<option value="8304">Guatemala</option>
+								<option value="2107">Guernsey</option>
+								<option value="9116">Guinea</option>
+								<option value="9117">Guinea-Bissau</option>
+								<option value="8211">Guyana</option>
+								<option value="8414">Haiti</option>
+								<option value="3103">Holy See</option>
+								<option value="8305">Honduras</option>
+								<option value="6102">Hong Kong (SAR of China)</option>
+								<option value="3304">Hungary</option>
+								<option value="2405">Iceland</option>
+								<option value="7103">India</option>
+								<option value="5202">Indonesia</option>
+								<option value="4203">Iran</option>
+								<option value="4204">Iraq</option>
+								<option value="2201">Ireland</option>
+								<option value="2103">Isle of Man</option>
+								<option value="4205">Israel</option>
+								<option value="3104">Italy</option>
+								<option value="8415">Jamaica</option>
+								<option value="6201">Japan</option>
+								<option value="2108">Jersey</option>
+								<option value="4206">Jordan</option>
+								<option value="7205">Kazakhstan</option>
+								<option value="9208">Kenya</option>
+								<option value="1402">Kiribati</option>
+								<option value="6202">Korea, Democratic People's Republic of (North)</option>
+								<option value="6203">Korea, Republic of (South)</option>
+								<option value="3216">Kosovo</option>
+								<option value="4207">Kuwait</option>
+								<option value="7206">Kyrgyzstan</option>
+								<option value="5103">Laos</option>
+								<option value="3305">Latvia</option>
+								<option value="4208">Lebanon</option>
+								<option value="9211">Lesotho</option>
+								<option value="9118">Liberia</option>
+								<option value="4103">Libya</option>
+								<option value="2305">Liechtenstein</option>
+								<option value="3306">Lithuania</option>
+								<option value="2306">Luxembourg</option>
+								<option value="6103">Macau (SAR of China)</option>
+								<option value="9212">Madagascar</option>
+								<option value="9213">Malawi</option>
+								<option value="5203">Malaysia</option>
+								<option value="7104">Maldives</option>
+								<option value="9121">Mali</option>
+								<option value="3105">Malta</option>
+								<option value="1403">Marshall Islands</option>
+								<option value="8416">Martinique</option>
+								<option value="9122">Mauritania</option>
+								<option value="9214">Mauritius</option>
+								<option value="9215">Mayotte</option>
+								<option value="8306">Mexico</option>
+								<option value="1404">Micronesia, Federated States of</option>
+								<option value="3208">Moldova</option>
+								<option value="2307">Monaco</option>
+								<option value="6104">Mongolia</option>
+								<option value="3214">Montenegro</option>
+								<option value="8417">Montserrat</option>
+								<option value="4104">Morocco</option>
+								<option value="9216">Mozambique</option>
+								<option value="5101">Myanmar</option>
+								<option value="9217">Namibia</option>
+								<option value="1405">Nauru</option>
+								<option value="7105">Nepal</option>
+								<option value="2308">Netherlands</option>
+								<option value="1301">New Caledonia</option>
+								<option value="1201">New Zealand</option>
+								<option value="8307">Nicaragua</option>
+								<option value="9123">Niger</option>
+								<option value="9124">Nigeria</option>
+								<option value="1504">Niue</option>
+								<option value="1102">Norfolk Island</option>
+								<option value="2104">Northern Ireland</option>
+								<option value="1406">Northern Mariana Islands</option>
+								<option value="2406">Norway</option>
+								<option value="4202">Occupied Palestinian Territories</option>
+								<option value="4211">Oman</option>
+								<option value="7106">Pakistan</option>
+								<option value="1407">Palau</option>
+								<option value="8308">Panama</option>
+								<option value="1302">Papua New Guinea</option>
+								<option value="8212">Paraguay</option>
+								<option value="8213">Peru</option>
+								<option value="5204">Philippines</option>
+								<option value="1513">Pitcairn Islands</option>
+								<option value="3307">Poland</option>
+								<option value="3106">Portugal</option>
+								<option value="8421">Puerto Rico</option>
+								<option value="4212">Qatar</option>
+								<option value="1606">Queen Maud Land (Norway)</option>
+								<option value="9218">Reunion</option>
+								<option value="3211">Romania</option>
+								<option value="1607">Ross Dependency (New Zealand)</option>
+								<option value="3308">Russian Federation</option>
+								<option value="9221">Rwanda</option>
+								<option value="1505">Samoa</option>
+								<option value="1506">Samoa, American</option>
+								<option value="3107">San Marino</option>
+								<option value="9125">Sao Tome and Principe</option>
+								<option value="4213">Saudi Arabia</option>
+								<option value="2105">Scotland</option>
+								<option value="9126">Senegal</option>
+								<option value="3215">Serbia</option>
+								<option value="9223">Seychelles</option>
+								<option value="9127">Sierra Leone</option>
+								<option value="5205">Singapore</option>
+								<option value="8435">Sint Maarten (Dutch part)</option>
+								<option value="3311">Slovakia</option>
+								<option value="3212">Slovenia</option>
+								<option value="1303">Solomon Islands</option>
+								<option value="9224">Somalia</option>
+								<option value="9225">South Africa</option>
+								<option value="4111">South Sudan</option>
+								<option value="3108">Spain</option>
+								<option value="4108">Spanish North Africa</option>
+								<option value="7107">Sri Lanka</option>
+								<option value="8431">St Barthelemy</option>
+								<option value="9222">St Helena</option>
+								<option value="8422">St Kitts and Nevis</option>
+								<option value="8423">St Lucia</option>
+								<option value="8432">St Martin (French part)</option>
+								<option value="8103">St Pierre and Miquelon</option>
+								<option value="8424">St Vincent and the Grenadines</option>
+								<option value="4105">Sudan</option>
+								<option value="8214">Suriname</option>
+								<option value="9226">Swaziland</option>
+								<option value="2407">Sweden</option>
+								<option value="2311">Switzerland</option>
+								<option value="4214">Syria</option>
+								<option value="6105">Taiwan</option>
+								<option value="7207">Tajikistan</option>
+								<option value="9227">Tanzania</option>
+								<option value="5104">Thailand</option>
+								<option value="3206">The former Yugoslav Republic of Macedonia</option>
+								<option value="5206">Timor-Leste</option>
+								<option value="9128">Togo</option>
+								<option value="1507">Tokelau</option>
+								<option value="1508">Tonga</option>
+								<option value="8425">Trinidad and Tobago</option>
+								<option value="4106">Tunisia</option>
+								<option value="4215">Turkey</option>
+								<option value="7208">Turkmenistan</option>
+								<option value="8426">Turks and Caicos Islands</option>
+								<option value="1511">Tuvalu</option>
+								<option value="9228">Uganda</option>
+								<option value="3312">Ukraine</option>
+								<option value="4216">United Arab Emirates</option>
+								<option value="8104">United States of America</option>
+								<option value="8215">Uruguay</option>
+								<option value="7211">Uzbekistan</option>
+								<option value="1304">Vanuatu</option>
+								<option value="8216">Venezuela</option>
+								<option value="5105">Vietnam</option>
+								<option value="8427">Virgin Islands, British</option>
+								<option value="8428">Virgin Islands, United States</option>
+								<option value="2106">Wales</option>
+								<option value="1512">Wallis and Futuna</option>
+								<option value="4107">Western Sahara</option>
+								<option value="4217">Yemen</option>
+								<option value="9231">Zambia</option>
+								<option value="9232">Zimbabwe</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<div class="col-sm-3"></div>
+					<div class="customButton col-sm-8">
+						<button type="submit" class="buttonAddress ui-icon-plus" id="button_address_copy">
+							<span>Copy Residential Address to Postal</span>
+						</button>
+					</div>
+				</div>
+				<div class="info-field-detailed header_information">Postal Address</div>
+				<div class="form-group row addressInfo">
+					<label for="buildingName" class="col-sm-3 col-form-label">Building/property name: </label>
+					<div class="col-sm-8 d-flex">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="50" type="text" id="BUILDINGNAME" name="BUILDINGNAME">
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-6" class="has-close ax-tip d-none">
+								<p style="margin:0;"> Building/property name is the official place name or common usage name for an address site, including the name of a building, Aboriginal community, homestead, building complex, agricultural property, park or unbounded address site. </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-6">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-6 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="unitName" class="col-sm-3 col-form-label">Flat/unit details: </label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="30" type="text" id="UNITNO" name="UNITNO">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="streetorlotName" class="col-sm-3 col-form-label">Street or lot number:</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="15" type="text" id="STREETNO" name="STREETNO">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="streetName" class="col-sm-3 col-form-label">Street Name: </label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="70" type="text" id="STREETNAME" name="STREETNAME">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="streetName" class="col-sm-3 col-form-label">Postal delivery information (PO box): </label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="22" type="text" id="POBOX" name="POBOX">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Suburb, locality or town:</label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" maxlength="50" type="text" id="CITY" name="CITY">
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">State/Teritory: </label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="STATE" id="STATE" style="">
+								<option value="">Select</option>
+								<option value="NSW">NSW</option>
+								<option value="VIC">VIC</option>
+								<option value="QLD">QLD</option>
+								<option value="SA">SA</option>
+								<option value="WA">WA</option>
+								<option value="TAS">TAS</option>
+								<option value="NT">NT</option>
+								<option value="ACT">ACT</option>
+								<option value="OTH">Other Australian Territory</option>
+								<option value="OVS">Overseas</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Postcode: </label>
+					<div class="col-sm-8">
+						<input class="enroller-field-input" data-wrapper-class="ui-btn" required="required" maxlength="10" type="text" id="POSTCODE" name="POSTCODE">
+					</div>
+				</div>
+				<!-- has country -->
+				<div class="form-group row addressInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Country:</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" id="COUNTRYID" style="">
+								<option value="">Select</option>
+								<option value="1601">Adelie Land (France)</option>
+								<option value="7201">Afghanistan</option>
+								<option value="2408">Aland Islands</option>
+								<option value="3201">Albania</option>
+								<option value="4101">Algeria</option>
+								<option value="3101">Andorra</option>
+								<option value="9201">Angola</option>
+								<option value="8401">Anguilla</option>
+								<option value="8402">Antigua and Barbuda</option>
+								<option value="8201">Argentina</option>
+								<option value="1602">Argentinian Antarctic Territory</option>
+								<option value="7202">Armenia</option>
+								<option value="8403">Aruba</option>
+								<option value="1101">Australia</option>
+								<option value="1603">Australian Antarctic Territory</option>
+								<option value="2301">Austria</option>
+								<option value="7203">Azerbaijan</option>
+								<option value="8404">Bahamas</option>
+								<option value="4201">Bahrain</option>
+								<option value="7101">Bangladesh</option>
+								<option value="8405">Barbados</option>
+								<option value="3301">Belarus</option>
+								<option value="2302">Belgium</option>
+								<option value="8301">Belize</option>
+								<option value="9101">Benin</option>
+								<option value="8101">Bermuda</option>
+								<option value="7102">Bhutan</option>
+								<option value="8202">Bolivia</option>
+								<option value="8433">Bonaire, Sint Eustatius and Saba</option>
+								<option value="3202">Bosnia and Herzegovina</option>
+								<option value="9202">Botswana</option>
+								<option value="8203">Brazil</option>
+								<option value="1604">British Antarctic Territory</option>
+								<option value="5201">Brunei Darussalam</option>
+								<option value="3203">Bulgaria</option>
+								<option value="9102">Burkina Faso</option>
+								<option value="9203">Burundi</option>
+								<option value="5102">Cambodia</option>
+								<option value="9103">Cameroon</option>
+								<option value="8102">Canada</option>
+								<option value="9104">Cape Verde</option>
+								<option value="8406">Cayman Islands</option>
+								<option value="9105">Central African Republic</option>
+								<option value="9106">Chad</option>
+								<option value="8204">Chile</option>
+								<option value="1605">Chilean Antarctic Territory</option>
+								<option value="6101">China (excludes SARs and Taiwan)</option>
+								<option value="8205">Colombia</option>
+								<option value="9204">Comoros</option>
+								<option value="9108">Congo, Democratic Republic of</option>
+								<option value="9107">Congo, Republic of</option>
+								<option value="1501">Cook Islands</option>
+								<option value="8302">Costa Rica</option>
+								<option value="9111">Cote d'Ivoire</option>
+								<option value="3204">Croatia</option>
+								<option value="8407">Cuba</option>
+								<option value="8434">Curacao</option>
+								<option value="3205">Cyprus</option>
+								<option value="3302">Czech Republic</option>
+								<option value="2401">Denmark</option>
+								<option value="9205">Djibouti</option>
+								<option value="8408">Dominica</option>
+								<option value="8411">Dominican Republic</option>
+								<option value="8206">Ecuador</option>
+								<option value="4102">Egypt</option>
+								<option value="8303">El Salvador</option>
+								<option value="2102">England</option>
+								<option value="9112">Equatorial Guinea</option>
+								<option value="9206">Eritrea</option>
+								<option value="3303">Estonia</option>
+								<option value="9207">Ethiopia</option>
+								<option value="8207">Falkland Islands</option>
+								<option value="2402">Faroe Islands</option>
+								<option value="1502">Fiji</option>
+								<option value="2403">Finland</option>
+								<option value="2303">France</option>
+								<option value="8208">French Guiana</option>
+								<option value="1503">French Polynesia</option>
+								<option value="9113">Gabon</option>
+								<option value="9114">Gambia</option>
+								<option value="7204">Georgia</option>
+								<option value="2304">Germany</option>
+								<option value="9115">Ghana</option>
+								<option value="3102">Gibraltar</option>
+								<option value="3207">Greece</option>
+								<option value="2404">Greenland</option>
+								<option value="8412">Grenada</option>
+								<option value="8413">Guadeloupe</option>
+								<option value="1401">Guam</option>
+								<option value="8304">Guatemala</option>
+								<option value="2107">Guernsey</option>
+								<option value="9116">Guinea</option>
+								<option value="9117">Guinea-Bissau</option>
+								<option value="8211">Guyana</option>
+								<option value="8414">Haiti</option>
+								<option value="3103">Holy See</option>
+								<option value="8305">Honduras</option>
+								<option value="6102">Hong Kong (SAR of China)</option>
+								<option value="3304">Hungary</option>
+								<option value="2405">Iceland</option>
+								<option value="7103">India</option>
+								<option value="5202">Indonesia</option>
+								<option value="4203">Iran</option>
+								<option value="4204">Iraq</option>
+								<option value="2201">Ireland</option>
+								<option value="2103">Isle of Man</option>
+								<option value="4205">Israel</option>
+								<option value="3104">Italy</option>
+								<option value="8415">Jamaica</option>
+								<option value="6201">Japan</option>
+								<option value="2108">Jersey</option>
+								<option value="4206">Jordan</option>
+								<option value="7205">Kazakhstan</option>
+								<option value="9208">Kenya</option>
+								<option value="1402">Kiribati</option>
+								<option value="6202">Korea, Democratic People's Republic of (North)</option>
+								<option value="6203">Korea, Republic of (South)</option>
+								<option value="3216">Kosovo</option>
+								<option value="4207">Kuwait</option>
+								<option value="7206">Kyrgyzstan</option>
+								<option value="5103">Laos</option>
+								<option value="3305">Latvia</option>
+								<option value="4208">Lebanon</option>
+								<option value="9211">Lesotho</option>
+								<option value="9118">Liberia</option>
+								<option value="4103">Libya</option>
+								<option value="2305">Liechtenstein</option>
+								<option value="3306">Lithuania</option>
+								<option value="2306">Luxembourg</option>
+								<option value="6103">Macau (SAR of China)</option>
+								<option value="9212">Madagascar</option>
+								<option value="9213">Malawi</option>
+								<option value="5203">Malaysia</option>
+								<option value="7104">Maldives</option>
+								<option value="9121">Mali</option>
+								<option value="3105">Malta</option>
+								<option value="1403">Marshall Islands</option>
+								<option value="8416">Martinique</option>
+								<option value="9122">Mauritania</option>
+								<option value="9214">Mauritius</option>
+								<option value="9215">Mayotte</option>
+								<option value="8306">Mexico</option>
+								<option value="1404">Micronesia, Federated States of</option>
+								<option value="3208">Moldova</option>
+								<option value="2307">Monaco</option>
+								<option value="6104">Mongolia</option>
+								<option value="3214">Montenegro</option>
+								<option value="8417">Montserrat</option>
+								<option value="4104">Morocco</option>
+								<option value="9216">Mozambique</option>
+								<option value="5101">Myanmar</option>
+								<option value="9217">Namibia</option>
+								<option value="1405">Nauru</option>
+								<option value="7105">Nepal</option>
+								<option value="2308">Netherlands</option>
+								<option value="1301">New Caledonia</option>
+								<option value="1201">New Zealand</option>
+								<option value="8307">Nicaragua</option>
+								<option value="9123">Niger</option>
+								<option value="9124">Nigeria</option>
+								<option value="1504">Niue</option>
+								<option value="1102">Norfolk Island</option>
+								<option value="2104">Northern Ireland</option>
+								<option value="1406">Northern Mariana Islands</option>
+								<option value="2406">Norway</option>
+								<option value="4202">Occupied Palestinian Territories</option>
+								<option value="4211">Oman</option>
+								<option value="7106">Pakistan</option>
+								<option value="1407">Palau</option>
+								<option value="8308">Panama</option>
+								<option value="1302">Papua New Guinea</option>
+								<option value="8212">Paraguay</option>
+								<option value="8213">Peru</option>
+								<option value="5204">Philippines</option>
+								<option value="1513">Pitcairn Islands</option>
+								<option value="3307">Poland</option>
+								<option value="3106">Portugal</option>
+								<option value="8421">Puerto Rico</option>
+								<option value="4212">Qatar</option>
+								<option value="1606">Queen Maud Land (Norway)</option>
+								<option value="9218">Reunion</option>
+								<option value="3211">Romania</option>
+								<option value="1607">Ross Dependency (New Zealand)</option>
+								<option value="3308">Russian Federation</option>
+								<option value="9221">Rwanda</option>
+								<option value="1505">Samoa</option>
+								<option value="1506">Samoa, American</option>
+								<option value="3107">San Marino</option>
+								<option value="9125">Sao Tome and Principe</option>
+								<option value="4213">Saudi Arabia</option>
+								<option value="2105">Scotland</option>
+								<option value="9126">Senegal</option>
+								<option value="3215">Serbia</option>
+								<option value="9223">Seychelles</option>
+								<option value="9127">Sierra Leone</option>
+								<option value="5205">Singapore</option>
+								<option value="8435">Sint Maarten (Dutch part)</option>
+								<option value="3311">Slovakia</option>
+								<option value="3212">Slovenia</option>
+								<option value="1303">Solomon Islands</option>
+								<option value="9224">Somalia</option>
+								<option value="9225">South Africa</option>
+								<option value="4111">South Sudan</option>
+								<option value="3108">Spain</option>
+								<option value="4108">Spanish North Africa</option>
+								<option value="7107">Sri Lanka</option>
+								<option value="8431">St Barthelemy</option>
+								<option value="9222">St Helena</option>
+								<option value="8422">St Kitts and Nevis</option>
+								<option value="8423">St Lucia</option>
+								<option value="8432">St Martin (French part)</option>
+								<option value="8103">St Pierre and Miquelon</option>
+								<option value="8424">St Vincent and the Grenadines</option>
+								<option value="4105">Sudan</option>
+								<option value="8214">Suriname</option>
+								<option value="9226">Swaziland</option>
+								<option value="2407">Sweden</option>
+								<option value="2311">Switzerland</option>
+								<option value="4214">Syria</option>
+								<option value="6105">Taiwan</option>
+								<option value="7207">Tajikistan</option>
+								<option value="9227">Tanzania</option>
+								<option value="5104">Thailand</option>
+								<option value="3206">The former Yugoslav Republic of Macedonia</option>
+								<option value="5206">Timor-Leste</option>
+								<option value="9128">Togo</option>
+								<option value="1507">Tokelau</option>
+								<option value="1508">Tonga</option>
+								<option value="8425">Trinidad and Tobago</option>
+								<option value="4106">Tunisia</option>
+								<option value="4215">Turkey</option>
+								<option value="7208">Turkmenistan</option>
+								<option value="8426">Turks and Caicos Islands</option>
+								<option value="1511">Tuvalu</option>
+								<option value="9228">Uganda</option>
+								<option value="3312">Ukraine</option>
+								<option value="4216">United Arab Emirates</option>
+								<option value="8104">United States of America</option>
+								<option value="8215">Uruguay</option>
+								<option value="7211">Uzbekistan</option>
+								<option value="1304">Vanuatu</option>
+								<option value="8216">Venezuela</option>
+								<option value="5105">Vietnam</option>
+								<option value="8427">Virgin Islands, British</option>
+								<option value="8428">Virgin Islands, United States</option>
+								<option value="2106">Wales</option>
+								<option value="1512">Wallis and Futuna</option>
+								<option value="4107">Western Sahara</option>
+								<option value="4217">Yemen</option>
+								<option value="9231">Zambia</option>
+								<option value="9232">Zimbabwe</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row addressInfo">
+					<div class="col-sm-3"></div>
+					<div class="customButton col-sm-8">
+						<button type="submit" class="buttonAddress buttonAddressSubmit ui-icon-plus" id="button_address">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--End of Address Form Started-->
+<!--Nationality Form Started-->
+<div id="step4" class="step-form">
+	<div class="form-container">
+		<div class="form-header">
+			<h3>Nationality</h3>
+			<p>Step 04 of 06</p>
+		</div>
+		<div class="form-body contact-update" id="contactAvetmiss_step">
+			<div class="info-field-detailed header_information">Citizenship</div>
+			<form class="emergencyContactForm" method="PUT">
+				<!-- has country -->
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Country of Birth: </label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" id="COUNTRYOFBIRTHID" style="">
+								<option value="">Select</option>
+								<option value="1601">Adelie Land (France)</option>
+								<option value="7201">Afghanistan</option>
+								<option value="2408">Aland Islands</option>
+								<option value="3201">Albania</option>
+								<option value="4101">Algeria</option>
+								<option value="3101">Andorra</option>
+								<option value="9201">Angola</option>
+								<option value="8401">Anguilla</option>
+								<option value="8402">Antigua and Barbuda</option>
+								<option value="8201">Argentina</option>
+								<option value="1602">Argentinian Antarctic Territory</option>
+								<option value="7202">Armenia</option>
+								<option value="8403">Aruba</option>
+								<option value="1101">Australia</option>
+								<option value="1603">Australian Antarctic Territory</option>
+								<option value="2301">Austria</option>
+								<option value="7203">Azerbaijan</option>
+								<option value="8404">Bahamas</option>
+								<option value="4201">Bahrain</option>
+								<option value="7101">Bangladesh</option>
+								<option value="8405">Barbados</option>
+								<option value="3301">Belarus</option>
+								<option value="2302">Belgium</option>
+								<option value="8301">Belize</option>
+								<option value="9101">Benin</option>
+								<option value="8101">Bermuda</option>
+								<option value="7102">Bhutan</option>
+								<option value="8202">Bolivia</option>
+								<option value="8433">Bonaire, Sint Eustatius and Saba</option>
+								<option value="3202">Bosnia and Herzegovina</option>
+								<option value="9202">Botswana</option>
+								<option value="8203">Brazil</option>
+								<option value="1604">British Antarctic Territory</option>
+								<option value="5201">Brunei Darussalam</option>
+								<option value="3203">Bulgaria</option>
+								<option value="9102">Burkina Faso</option>
+								<option value="9203">Burundi</option>
+								<option value="5102">Cambodia</option>
+								<option value="9103">Cameroon</option>
+								<option value="8102">Canada</option>
+								<option value="9104">Cape Verde</option>
+								<option value="8406">Cayman Islands</option>
+								<option value="9105">Central African Republic</option>
+								<option value="9106">Chad</option>
+								<option value="8204">Chile</option>
+								<option value="1605">Chilean Antarctic Territory</option>
+								<option value="6101">China (excludes SARs and Taiwan)</option>
+								<option value="8205">Colombia</option>
+								<option value="9204">Comoros</option>
+								<option value="9108">Congo, Democratic Republic of</option>
+								<option value="9107">Congo, Republic of</option>
+								<option value="1501">Cook Islands</option>
+								<option value="8302">Costa Rica</option>
+								<option value="9111">Cote d'Ivoire</option>
+								<option value="3204">Croatia</option>
+								<option value="8407">Cuba</option>
+								<option value="8434">Curacao</option>
+								<option value="3205">Cyprus</option>
+								<option value="3302">Czech Republic</option>
+								<option value="2401">Denmark</option>
+								<option value="9205">Djibouti</option>
+								<option value="8408">Dominica</option>
+								<option value="8411">Dominican Republic</option>
+								<option value="8206">Ecuador</option>
+								<option value="4102">Egypt</option>
+								<option value="8303">El Salvador</option>
+								<option value="2102">England</option>
+								<option value="9112">Equatorial Guinea</option>
+								<option value="9206">Eritrea</option>
+								<option value="3303">Estonia</option>
+								<option value="9207">Ethiopia</option>
+								<option value="8207">Falkland Islands</option>
+								<option value="2402">Faroe Islands</option>
+								<option value="1502">Fiji</option>
+								<option value="2403">Finland</option>
+								<option value="2303">France</option>
+								<option value="8208">French Guiana</option>
+								<option value="1503">French Polynesia</option>
+								<option value="9113">Gabon</option>
+								<option value="9114">Gambia</option>
+								<option value="7204">Georgia</option>
+								<option value="2304">Germany</option>
+								<option value="9115">Ghana</option>
+								<option value="3102">Gibraltar</option>
+								<option value="3207">Greece</option>
+								<option value="2404">Greenland</option>
+								<option value="8412">Grenada</option>
+								<option value="8413">Guadeloupe</option>
+								<option value="1401">Guam</option>
+								<option value="8304">Guatemala</option>
+								<option value="2107">Guernsey</option>
+								<option value="9116">Guinea</option>
+								<option value="9117">Guinea-Bissau</option>
+								<option value="8211">Guyana</option>
+								<option value="8414">Haiti</option>
+								<option value="3103">Holy See</option>
+								<option value="8305">Honduras</option>
+								<option value="6102">Hong Kong (SAR of China)</option>
+								<option value="3304">Hungary</option>
+								<option value="2405">Iceland</option>
+								<option value="7103">India</option>
+								<option value="5202">Indonesia</option>
+								<option value="4203">Iran</option>
+								<option value="4204">Iraq</option>
+								<option value="2201">Ireland</option>
+								<option value="2103">Isle of Man</option>
+								<option value="4205">Israel</option>
+								<option value="3104">Italy</option>
+								<option value="8415">Jamaica</option>
+								<option value="6201">Japan</option>
+								<option value="2108">Jersey</option>
+								<option value="4206">Jordan</option>
+								<option value="7205">Kazakhstan</option>
+								<option value="9208">Kenya</option>
+								<option value="1402">Kiribati</option>
+								<option value="6202">Korea, Democratic People's Republic of (North)</option>
+								<option value="6203">Korea, Republic of (South)</option>
+								<option value="3216">Kosovo</option>
+								<option value="4207">Kuwait</option>
+								<option value="7206">Kyrgyzstan</option>
+								<option value="5103">Laos</option>
+								<option value="3305">Latvia</option>
+								<option value="4208">Lebanon</option>
+								<option value="9211">Lesotho</option>
+								<option value="9118">Liberia</option>
+								<option value="4103">Libya</option>
+								<option value="2305">Liechtenstein</option>
+								<option value="3306">Lithuania</option>
+								<option value="2306">Luxembourg</option>
+								<option value="6103">Macau (SAR of China)</option>
+								<option value="9212">Madagascar</option>
+								<option value="9213">Malawi</option>
+								<option value="5203">Malaysia</option>
+								<option value="7104">Maldives</option>
+								<option value="9121">Mali</option>
+								<option value="3105">Malta</option>
+								<option value="1403">Marshall Islands</option>
+								<option value="8416">Martinique</option>
+								<option value="9122">Mauritania</option>
+								<option value="9214">Mauritius</option>
+								<option value="9215">Mayotte</option>
+								<option value="8306">Mexico</option>
+								<option value="1404">Micronesia, Federated States of</option>
+								<option value="3208">Moldova</option>
+								<option value="2307">Monaco</option>
+								<option value="6104">Mongolia</option>
+								<option value="3214">Montenegro</option>
+								<option value="8417">Montserrat</option>
+								<option value="4104">Morocco</option>
+								<option value="9216">Mozambique</option>
+								<option value="5101">Myanmar</option>
+								<option value="9217">Namibia</option>
+								<option value="1405">Nauru</option>
+								<option value="7105">Nepal</option>
+								<option value="2308">Netherlands</option>
+								<option value="1301">New Caledonia</option>
+								<option value="1201">New Zealand</option>
+								<option value="8307">Nicaragua</option>
+								<option value="9123">Niger</option>
+								<option value="9124">Nigeria</option>
+								<option value="1504">Niue</option>
+								<option value="1102">Norfolk Island</option>
+								<option value="2104">Northern Ireland</option>
+								<option value="1406">Northern Mariana Islands</option>
+								<option value="2406">Norway</option>
+								<option value="4202">Occupied Palestinian Territories</option>
+								<option value="4211">Oman</option>
+								<option value="7106">Pakistan</option>
+								<option value="1407">Palau</option>
+								<option value="8308">Panama</option>
+								<option value="1302">Papua New Guinea</option>
+								<option value="8212">Paraguay</option>
+								<option value="8213">Peru</option>
+								<option value="5204">Philippines</option>
+								<option value="1513">Pitcairn Islands</option>
+								<option value="3307">Poland</option>
+								<option value="3106">Portugal</option>
+								<option value="8421">Puerto Rico</option>
+								<option value="4212">Qatar</option>
+								<option value="1606">Queen Maud Land (Norway)</option>
+								<option value="9218">Reunion</option>
+								<option value="3211">Romania</option>
+								<option value="1607">Ross Dependency (New Zealand)</option>
+								<option value="3308">Russian Federation</option>
+								<option value="9221">Rwanda</option>
+								<option value="1505">Samoa</option>
+								<option value="1506">Samoa, American</option>
+								<option value="3107">San Marino</option>
+								<option value="9125">Sao Tome and Principe</option>
+								<option value="4213">Saudi Arabia</option>
+								<option value="2105">Scotland</option>
+								<option value="9126">Senegal</option>
+								<option value="3215">Serbia</option>
+								<option value="9223">Seychelles</option>
+								<option value="9127">Sierra Leone</option>
+								<option value="5205">Singapore</option>
+								<option value="8435">Sint Maarten (Dutch part)</option>
+								<option value="3311">Slovakia</option>
+								<option value="3212">Slovenia</option>
+								<option value="1303">Solomon Islands</option>
+								<option value="9224">Somalia</option>
+								<option value="9225">South Africa</option>
+								<option value="4111">South Sudan</option>
+								<option value="3108">Spain</option>
+								<option value="4108">Spanish North Africa</option>
+								<option value="7107">Sri Lanka</option>
+								<option value="8431">St Barthelemy</option>
+								<option value="9222">St Helena</option>
+								<option value="8422">St Kitts and Nevis</option>
+								<option value="8423">St Lucia</option>
+								<option value="8432">St Martin (French part)</option>
+								<option value="8103">St Pierre and Miquelon</option>
+								<option value="8424">St Vincent and the Grenadines</option>
+								<option value="4105">Sudan</option>
+								<option value="8214">Suriname</option>
+								<option value="9226">Swaziland</option>
+								<option value="2407">Sweden</option>
+								<option value="2311">Switzerland</option>
+								<option value="4214">Syria</option>
+								<option value="6105">Taiwan</option>
+								<option value="7207">Tajikistan</option>
+								<option value="9227">Tanzania</option>
+								<option value="5104">Thailand</option>
+								<option value="3206">The former Yugoslav Republic of Macedonia</option>
+								<option value="5206">Timor-Leste</option>
+								<option value="9128">Togo</option>
+								<option value="1507">Tokelau</option>
+								<option value="1508">Tonga</option>
+								<option value="8425">Trinidad and Tobago</option>
+								<option value="4106">Tunisia</option>
+								<option value="4215">Turkey</option>
+								<option value="7208">Turkmenistan</option>
+								<option value="8426">Turks and Caicos Islands</option>
+								<option value="1511">Tuvalu</option>
+								<option value="9228">Uganda</option>
+								<option value="3312">Ukraine</option>
+								<option value="4216">United Arab Emirates</option>
+								<option value="8104">United States of America</option>
+								<option value="8215">Uruguay</option>
+								<option value="7211">Uzbekistan</option>
+								<option value="1304">Vanuatu</option>
+								<option value="8216">Venezuela</option>
+								<option value="5105">Vietnam</option>
+								<option value="8427">Virgin Islands, British</option>
+								<option value="8428">Virgin Islands, United States</option>
+								<option value="2106">Wales</option>
+								<option value="1512">Wallis and Futuna</option>
+								<option value="4107">Western Sahara</option>
+								<option value="4217">Yemen</option>
+								<option value="9231">Zambia</option>
+								<option value="9232">Zimbabwe</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Citizenship Status: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" required="required" id="CITIZENSTATUSID" style="">
+								<option value="">Select</option>
+								<option value="1">Australian Citizen</option>
+								<option value="2">New Zealand Citizen</option>
+								<option value="3">Australian Permanent Resident</option>
+								<option value="4">Student Visa</option>
+								<option value="5">Temporary Resident Visa</option>
+								<option value="6">Visitor's Visa</option>
+								<option value="7">Business Visa</option>
+								<option value="8">Holiday Visa</option>
+								<option value="9">Other Visa</option>
+								<option value="10">Permanent Humanitarian Visa</option>
+								<option value="11">Overseas - No Visa or Citizenship</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- has country -->
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Country of Citizenship: </label>
+					<div class="col-sm-8">
+						<div class="select-wrap">
+							<select data-native-menu="false" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" required="required" id="COUNTRYOFCITIZENID" style="">
+								<option value="">Select</option>
+								<option value="1601">Adelie Land (France)</option>
+								<option value="7201">Afghanistan</option>
+								<option value="2408">Aland Islands</option>
+								<option value="3201">Albania</option>
+								<option value="4101">Algeria</option>
+								<option value="3101">Andorra</option>
+								<option value="9201">Angola</option>
+								<option value="8401">Anguilla</option>
+								<option value="8402">Antigua and Barbuda</option>
+								<option value="8201">Argentina</option>
+								<option value="1602">Argentinian Antarctic Territory</option>
+								<option value="7202">Armenia</option>
+								<option value="8403">Aruba</option>
+								<option value="1101">Australia</option>
+								<option value="1603">Australian Antarctic Territory</option>
+								<option value="2301">Austria</option>
+								<option value="7203">Azerbaijan</option>
+								<option value="8404">Bahamas</option>
+								<option value="4201">Bahrain</option>
+								<option value="7101">Bangladesh</option>
+								<option value="8405">Barbados</option>
+								<option value="3301">Belarus</option>
+								<option value="2302">Belgium</option>
+								<option value="8301">Belize</option>
+								<option value="9101">Benin</option>
+								<option value="8101">Bermuda</option>
+								<option value="7102">Bhutan</option>
+								<option value="8202">Bolivia</option>
+								<option value="8433">Bonaire, Sint Eustatius and Saba</option>
+								<option value="3202">Bosnia and Herzegovina</option>
+								<option value="9202">Botswana</option>
+								<option value="8203">Brazil</option>
+								<option value="1604">British Antarctic Territory</option>
+								<option value="5201">Brunei Darussalam</option>
+								<option value="3203">Bulgaria</option>
+								<option value="9102">Burkina Faso</option>
+								<option value="9203">Burundi</option>
+								<option value="5102">Cambodia</option>
+								<option value="9103">Cameroon</option>
+								<option value="8102">Canada</option>
+								<option value="9104">Cape Verde</option>
+								<option value="8406">Cayman Islands</option>
+								<option value="9105">Central African Republic</option>
+								<option value="9106">Chad</option>
+								<option value="8204">Chile</option>
+								<option value="1605">Chilean Antarctic Territory</option>
+								<option value="6101">China (excludes SARs and Taiwan)</option>
+								<option value="8205">Colombia</option>
+								<option value="9204">Comoros</option>
+								<option value="9108">Congo, Democratic Republic of</option>
+								<option value="9107">Congo, Republic of</option>
+								<option value="1501">Cook Islands</option>
+								<option value="8302">Costa Rica</option>
+								<option value="9111">Cote d'Ivoire</option>
+								<option value="3204">Croatia</option>
+								<option value="8407">Cuba</option>
+								<option value="8434">Curacao</option>
+								<option value="3205">Cyprus</option>
+								<option value="3302">Czech Republic</option>
+								<option value="2401">Denmark</option>
+								<option value="9205">Djibouti</option>
+								<option value="8408">Dominica</option>
+								<option value="8411">Dominican Republic</option>
+								<option value="8206">Ecuador</option>
+								<option value="4102">Egypt</option>
+								<option value="8303">El Salvador</option>
+								<option value="2102">England</option>
+								<option value="9112">Equatorial Guinea</option>
+								<option value="9206">Eritrea</option>
+								<option value="3303">Estonia</option>
+								<option value="9207">Ethiopia</option>
+								<option value="8207">Falkland Islands</option>
+								<option value="2402">Faroe Islands</option>
+								<option value="1502">Fiji</option>
+								<option value="2403">Finland</option>
+								<option value="2303">France</option>
+								<option value="8208">French Guiana</option>
+								<option value="1503">French Polynesia</option>
+								<option value="9113">Gabon</option>
+								<option value="9114">Gambia</option>
+								<option value="7204">Georgia</option>
+								<option value="2304">Germany</option>
+								<option value="9115">Ghana</option>
+								<option value="3102">Gibraltar</option>
+								<option value="3207">Greece</option>
+								<option value="2404">Greenland</option>
+								<option value="8412">Grenada</option>
+								<option value="8413">Guadeloupe</option>
+								<option value="1401">Guam</option>
+								<option value="8304">Guatemala</option>
+								<option value="2107">Guernsey</option>
+								<option value="9116">Guinea</option>
+								<option value="9117">Guinea-Bissau</option>
+								<option value="8211">Guyana</option>
+								<option value="8414">Haiti</option>
+								<option value="3103">Holy See</option>
+								<option value="8305">Honduras</option>
+								<option value="6102">Hong Kong (SAR of China)</option>
+								<option value="3304">Hungary</option>
+								<option value="2405">Iceland</option>
+								<option value="7103">India</option>
+								<option value="5202">Indonesia</option>
+								<option value="4203">Iran</option>
+								<option value="4204">Iraq</option>
+								<option value="2201">Ireland</option>
+								<option value="2103">Isle of Man</option>
+								<option value="4205">Israel</option>
+								<option value="3104">Italy</option>
+								<option value="8415">Jamaica</option>
+								<option value="6201">Japan</option>
+								<option value="2108">Jersey</option>
+								<option value="4206">Jordan</option>
+								<option value="7205">Kazakhstan</option>
+								<option value="9208">Kenya</option>
+								<option value="1402">Kiribati</option>
+								<option value="6202">Korea, Democratic People's Republic of (North)</option>
+								<option value="6203">Korea, Republic of (South)</option>
+								<option value="3216">Kosovo</option>
+								<option value="4207">Kuwait</option>
+								<option value="7206">Kyrgyzstan</option>
+								<option value="5103">Laos</option>
+								<option value="3305">Latvia</option>
+								<option value="4208">Lebanon</option>
+								<option value="9211">Lesotho</option>
+								<option value="9118">Liberia</option>
+								<option value="4103">Libya</option>
+								<option value="2305">Liechtenstein</option>
+								<option value="3306">Lithuania</option>
+								<option value="2306">Luxembourg</option>
+								<option value="6103">Macau (SAR of China)</option>
+								<option value="9212">Madagascar</option>
+								<option value="9213">Malawi</option>
+								<option value="5203">Malaysia</option>
+								<option value="7104">Maldives</option>
+								<option value="9121">Mali</option>
+								<option value="3105">Malta</option>
+								<option value="1403">Marshall Islands</option>
+								<option value="8416">Martinique</option>
+								<option value="9122">Mauritania</option>
+								<option value="9214">Mauritius</option>
+								<option value="9215">Mayotte</option>
+								<option value="8306">Mexico</option>
+								<option value="1404">Micronesia, Federated States of</option>
+								<option value="3208">Moldova</option>
+								<option value="2307">Monaco</option>
+								<option value="6104">Mongolia</option>
+								<option value="3214">Montenegro</option>
+								<option value="8417">Montserrat</option>
+								<option value="4104">Morocco</option>
+								<option value="9216">Mozambique</option>
+								<option value="5101">Myanmar</option>
+								<option value="9217">Namibia</option>
+								<option value="1405">Nauru</option>
+								<option value="7105">Nepal</option>
+								<option value="2308">Netherlands</option>
+								<option value="1301">New Caledonia</option>
+								<option value="1201">New Zealand</option>
+								<option value="8307">Nicaragua</option>
+								<option value="9123">Niger</option>
+								<option value="9124">Nigeria</option>
+								<option value="1504">Niue</option>
+								<option value="1102">Norfolk Island</option>
+								<option value="2104">Northern Ireland</option>
+								<option value="1406">Northern Mariana Islands</option>
+								<option value="2406">Norway</option>
+								<option value="4202">Occupied Palestinian Territories</option>
+								<option value="4211">Oman</option>
+								<option value="7106">Pakistan</option>
+								<option value="1407">Palau</option>
+								<option value="8308">Panama</option>
+								<option value="1302">Papua New Guinea</option>
+								<option value="8212">Paraguay</option>
+								<option value="8213">Peru</option>
+								<option value="5204">Philippines</option>
+								<option value="1513">Pitcairn Islands</option>
+								<option value="3307">Poland</option>
+								<option value="3106">Portugal</option>
+								<option value="8421">Puerto Rico</option>
+								<option value="4212">Qatar</option>
+								<option value="1606">Queen Maud Land (Norway)</option>
+								<option value="9218">Reunion</option>
+								<option value="3211">Romania</option>
+								<option value="1607">Ross Dependency (New Zealand)</option>
+								<option value="3308">Russian Federation</option>
+								<option value="9221">Rwanda</option>
+								<option value="1505">Samoa</option>
+								<option value="1506">Samoa, American</option>
+								<option value="3107">San Marino</option>
+								<option value="9125">Sao Tome and Principe</option>
+								<option value="4213">Saudi Arabia</option>
+								<option value="2105">Scotland</option>
+								<option value="9126">Senegal</option>
+								<option value="3215">Serbia</option>
+								<option value="9223">Seychelles</option>
+								<option value="9127">Sierra Leone</option>
+								<option value="5205">Singapore</option>
+								<option value="8435">Sint Maarten (Dutch part)</option>
+								<option value="3311">Slovakia</option>
+								<option value="3212">Slovenia</option>
+								<option value="1303">Solomon Islands</option>
+								<option value="9224">Somalia</option>
+								<option value="9225">South Africa</option>
+								<option value="4111">South Sudan</option>
+								<option value="3108">Spain</option>
+								<option value="4108">Spanish North Africa</option>
+								<option value="7107">Sri Lanka</option>
+								<option value="8431">St Barthelemy</option>
+								<option value="9222">St Helena</option>
+								<option value="8422">St Kitts and Nevis</option>
+								<option value="8423">St Lucia</option>
+								<option value="8432">St Martin (French part)</option>
+								<option value="8103">St Pierre and Miquelon</option>
+								<option value="8424">St Vincent and the Grenadines</option>
+								<option value="4105">Sudan</option>
+								<option value="8214">Suriname</option>
+								<option value="9226">Swaziland</option>
+								<option value="2407">Sweden</option>
+								<option value="2311">Switzerland</option>
+								<option value="4214">Syria</option>
+								<option value="6105">Taiwan</option>
+								<option value="7207">Tajikistan</option>
+								<option value="9227">Tanzania</option>
+								<option value="5104">Thailand</option>
+								<option value="3206">The former Yugoslav Republic of Macedonia</option>
+								<option value="5206">Timor-Leste</option>
+								<option value="9128">Togo</option>
+								<option value="1507">Tokelau</option>
+								<option value="1508">Tonga</option>
+								<option value="8425">Trinidad and Tobago</option>
+								<option value="4106">Tunisia</option>
+								<option value="4215">Turkey</option>
+								<option value="7208">Turkmenistan</option>
+								<option value="8426">Turks and Caicos Islands</option>
+								<option value="1511">Tuvalu</option>
+								<option value="9228">Uganda</option>
+								<option value="3312">Ukraine</option>
+								<option value="4216">United Arab Emirates</option>
+								<option value="8104">United States of America</option>
+								<option value="8215">Uruguay</option>
+								<option value="7211">Uzbekistan</option>
+								<option value="1304">Vanuatu</option>
+								<option value="8216">Venezuela</option>
+								<option value="5105">Vietnam</option>
+								<option value="8427">Virgin Islands, British</option>
+								<option value="8428">Virgin Islands, United States</option>
+								<option value="2106">Wales</option>
+								<option value="1512">Wallis and Futuna</option>
+								<option value="4107">Western Sahara</option>
+								<option value="4217">Yemen</option>
+								<option value="9231">Zambia</option>
+								<option value="9232">Zimbabwe</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="info-field-detailed header_information">Language</div>
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label-1">Do you speak a language other than english at home?: <span class="text-danger">*</span>
+					</label>
+					<div class="col-sm-8">
+						<div class="select-wrap" style="width:80%;">
+							<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="LanguageOtherThanEnglish" required="required" id="LanguageOtherThanEnglish" style="">
+								<option value="">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="1201">No</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">Language spoken most often: </label>
+					<div class="col-sm-8 d-flex">
+						<div class="select-wrap" style="width:80%;">
+							<select data-native-menu="false" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="false" data-role="none" id="MAINLANGUAGEID" style="">
+								<option value="">Select</option>
+								<option value="8998">Aboriginal English, so described</option>
+								<option value="6513">Acehnese</option>
+								<option value="9201">Acholi</option>
+								<option value="8901">Adnymathanha</option>
+								<option value="9299">African Languages, nec</option>
+								<option value="1403">Afrikaans</option>
+								<option value="9203">Akan</option>
+								<option value="8121">Alawa</option>
+								<option value="3901">Albanian</option>
+								<option value="8315">Alngith</option>
+								<option value="8603">Alyawarr</option>
+								<option value="9101">American Languages</option>
+								<option value="9214">Amharic</option>
+								<option value="8156">Amurdak</option>
+								<option value="8101">Anindilyakwa</option>
+								<option value="8619">Anmatyerr, nec</option>
+								<option value="8607">Antekerrepenh</option>
+								<option value="8703">Antikarinya</option>
+								<option value="9241">Anuak</option>
+								<option value="8902">Arabana</option>
+								<option value="4202">Arabic</option>
+								<option value="8699">Arandic, nec</option>
+								<option value="4901">Armenian</option>
+								<option value="8199">Arnhem Land and Daly River Region Languages, nec</option>
+								<option value="3903">Aromunian (Macedo-Romanian)</option>
+								<option value="8629">Arrernte, nec</option>
+								<option value="5213">Assamese</option>
+								<option value="4206">Assyrian Neo-Aramaic</option>
+								<option value="9701">Auslan</option>
+								<option value="4302">Azeri</option>
+								<option value="8946">Baanbay</option>
+								<option value="8947">Badimaya</option>
+								<option value="6514">Balinese</option>
+								<option value="4104">Balochi</option>
+								<option value="8903">Bandjalang</option>
+								<option value="8904">Banyjima</option>
+								<option value="8948">Barababaraba</option>
+								<option value="8801">Bardi</option>
+								<option value="9242">Bari</option>
+								<option value="2901">Basque</option>
+								<option value="9243">Bassa</option>
+								<option value="8905">Batjala</option>
+								<option value="3401">Belorussian</option>
+								<option value="9215">Bemba</option>
+								<option value="5201">Bengali</option>
+								<option value="8906">Bidjara</option>
+								<option value="6515">Bikol</option>
+								<option value="8504">Bilinarra</option>
+								<option value="6501">Bisaya</option>
+								<option value="9402">Bislama</option>
+								<option value="3501">Bosnian</option>
+								<option value="3502">Bulgarian</option>
+								<option value="8802">Bunuba</option>
+								<option value="8181">Burarra</option>
+								<option value="8189">Burarran, nec</option>
+								<option value="6101">Burmese</option>
+								<option value="6199">Burmese and Related Languages, nec</option>
+								<option value="7101">Cantonese</option>
+								<option value="8399">Cape York Peninsula Languages, nec</option>
+								<option value="2301">Catalan</option>
+								<option value="6502">Cebuano</option>
+								<option value="1199">Celtic, nec</option>
+								<option value="8611">Central Anmatyerr</option>
+								<option value="4207">Chaldean Neo-Aramaic</option>
+								<option value="6102">Chin Haka</option>
+								<option value="7199">Chinese, nec</option>
+								<option value="3503">Croatian</option>
+								<option value="3601">Czech</option>
+								<option value="3604">Czechoslovakian, so described</option>
+								<option value="8233">Daatiwuy</option>
+								<option value="8951">Dadi Dadi</option>
+								<option value="8122">Dalabon</option>
+								<option value="9244">Dan (Gio-Dan)</option>
+								<option value="1501">Danish</option>
+								<option value="4105">Dari</option>
+								<option value="8221">Dhalwangu</option>
+								<option value="8907">Dhanggatti</option>
+								<option value="8219">Dhangu, nec</option>
+								<option value="8952">Dharawal</option>
+								<option value="8229">Dhay'yi, nec</option>
+								<option value="5214">Dhivehi</option>
+								<option value="8239">Dhuwal, nec</option>
+								<option value="8249">Dhuwala, nec</option>
+								<option value="8291">Dhuwaya</option>
+								<option value="9216">Dinka</option>
+								<option value="8908">Diyari</option>
+								<option value="8305">Djabugay</option>
+								<option value="8953">Djabwurrung</option>
+								<option value="8231">Djambarrpuyngu</option>
+								<option value="8292">Djangu</option>
+								<option value="8232">Djapu</option>
+								<option value="8222">Djarrwark</option>
+								<option value="8259">Djinang, nec</option>
+								<option value="8262">Djinba</option>
+								<option value="8269">Djinba, nec</option>
+								<option value="5199">Dravidian, nec</option>
+								<option value="1401">Dutch</option>
+								<option value="8306">Dyirbal</option>
+								<option value="8612">Eastern Anmatyerr</option>
+								<option value="8621">Eastern Arrernte</option>
+								<option value="1201">English</option>
+								<option value="1601">Estonian</option>
+								<option value="9217">Ewe</option>
+								<option value="9301">Fijian</option>
+								<option value="5217">Fijian Hindustani</option>
+								<option value="6512">Filipino</option>
+								<option value="1602">Finnish</option>
+								<option value="1699">Finnish and Related Languages, nec</option>
+								<option value="2101">French</option>
+								<option value="1402">Frisian</option>
+								<option value="9245">Fulfulde</option>
+								<option value="9218">Ga</option>
+								<option value="1101">Gaelic (Scotland)</option>
+								<option value="8211">Galpu</option>
+								<option value="8813">Gambera</option>
+								<option value="8911">Gamilaraay</option>
+								<option value="8261">Ganalbingu</option>
+								<option value="8157">Garrwa</option>
+								<option value="8913">Garuwali</option>
+								<option value="4902">Georgian</option>
+								<option value="1301">German</option>
+								<option value="9302">Gilbertese</option>
+								<option value="8307">Girramay</option>
+								<option value="8914">Githabul</option>
+								<option value="8212">Golumala</option>
+								<option value="8803">Gooniyandi</option>
+								<option value="2201">Greek</option>
+								<option value="8123">Gudanji</option>
+								<option value="8954">Gudjal</option>
+								<option value="5202">Gujarati</option>
+								<option value="8242">Gumatj</option>
+								<option value="8915">Gumbaynggir</option>
+								<option value="8171">Gundjeihmi</option>
+								<option value="8182">Gun-nartpa</option>
+								<option value="8243">Gupapuyngu</option>
+								<option value="8505">Gurindji</option>
+								<option value="8506">Gurindji Kriol</option>
+								<option value="8183">Gurr-goni</option>
+								<option value="8302">Guugu Yimidhirr</option>
+								<option value="8244">Guyamirrilili</option>
+								<option value="7102">Hakka</option>
+								<option value="9221">Harari</option>
+								<option value="9222">Hausa</option>
+								<option value="9403">Hawaiian English</option>
+								<option value="4107">Hazaraghi</option>
+								<option value="4204">Hebrew</option>
+								<option value="5203">Hindi</option>
+								<option value="6201">Hmong</option>
+								<option value="6299">Hmong-Mien, nec</option>
+								<option value="3301">Hungarian</option>
+								<option value="6516">Iban</option>
+								<option value="2399">Iberian Romance, nec</option>
+								<option value="1502">Icelandic</option>
+								<option value="9223">Igbo</option>
+								<option value="6503">Ilokano</option>
+								<option value="6517">Ilonggo (Hiligaynon)</option>
+								<option value="5299">Indo-Aryan, nec</option>
+								<option value="6504">Indonesian</option>
+								<option value="9601">Invented Languages</option>
+								<option value="4199">Iranic, nec</option>
+								<option value="1102">Irish</option>
+								<option value="2401">Italian</option>
+								<option value="8127">Iwaidja</option>
+								<option value="8128">Jaminjung</option>
+								<option value="7201">Japanese</option>
+								<option value="8507">Jaru</option>
+								<option value="6518">Javanese</option>
+								<option value="8814">Jawi</option>
+								<option value="8131">Jawoyn</option>
+								<option value="8132">Jingulu</option>
+								<option value="8401">Kalaw Kawaw Ya/Kalaw Lagaw Ya</option>
+								<option value="8916">Kanai</option>
+								<option value="5101">Kannada</option>
+								<option value="8917">Karajarri</option>
+								<option value="6103">Karen</option>
+								<option value="8918">Kariyarra</option>
+								<option value="8704">Kartujarra</option>
+								<option value="5215">Kashmiri</option>
+								<option value="8921">Kaurna</option>
+								<option value="8922">Kayardild</option>
+								<option value="8606">Kaytetye</option>
+								<option value="8955">Keerray-Woorroong</option>
+								<option value="9702">Key Word Sign Australia</option>
+								<option value="6301">Khmer</option>
+								<option value="8815">Kija</option>
+								<option value="9224">Kikuyu</option>
+								<option value="8899">Kimberley Area Languages, nec</option>
+								<option value="9246">Kinyarwanda (Rwanda)</option>
+								<option value="9247">Kirundi (Rundi)</option>
+								<option value="9502">Kiwai</option>
+								<option value="8308">Koko-Bera</option>
+								<option value="5204">Konkani</option>
+								<option value="7301">Korean</option>
+								<option value="9248">Kpelle</option>
+								<option value="9251">Krahn</option>
+								<option value="9225">Krio</option>
+								<option value="8924">Kriol</option>
+								<option value="8316">Kugu Muminh</option>
+								<option value="8705">Kukatha</option>
+								<option value="8706">Kukatja</option>
+								<option value="8301">Kuku Yalanji</option>
+								<option value="8133">Kunbarlang</option>
+								<option value="8172">Kune</option>
+								<option value="8173">Kuninjku</option>
+								<option value="8174">Kunwinjku</option>
+								<option value="8179">Kunwinjkuan, nec</option>
+								<option value="4101">Kurdish</option>
+								<option value="8311">Kuuk Thayorre</option>
+								<option value="8303">Kuuku-Ya'u</option>
+								<option value="8158">Kuwema</option>
+								<option value="8956">Ladji Ladji</option>
+								<option value="8312">Lamalama</option>
+								<option value="6401">Lao</option>
+								<option value="8925">Lardil</option>
+								<option value="8136">Larrakiya</option>
+								<option value="2902">Latin</option>
+								<option value="3101">Latvian</option>
+								<option value="1302">Letzeburgish</option>
+								<option value="9252">Liberian (Liberian English)</option>
+								<option value="8508">Light Warlpiri</option>
+								<option value="9262">Lingala</option>
+								<option value="3102">Lithuanian</option>
+								<option value="8235">Liyagalawumirr</option>
+								<option value="8236">Liyagawumirr</option>
+								<option value="9253">Loma (Lorma)</option>
+								<option value="9226">Luganda</option>
+								<option value="9254">Lumun (Kuku Lumun)</option>
+								<option value="9227">Luo</option>
+								<option value="8707">Luritja</option>
+								<option value="3504">Macedonian</option>
+								<option value="8293">Madarrpa</option>
+								<option value="9255">Madi</option>
+								<option value="8137">Malak Malak</option>
+								<option value="6505">Malay</option>
+								<option value="5102">Malayalam</option>
+								<option value="8511">Malngin</option>
+								<option value="2501">Maltese</option>
+								<option value="4208">Mandaean (Mandaic)</option>
+								<option value="7104">Mandarin</option>
+								<option value="9256">Mandinka</option>
+								<option value="8926">Mangala</option>
+								<option value="8138">Mangarrayi</option>
+								<option value="8246">Manggalili</option>
+								<option value="9257">Mann</option>
+								<option value="8263">Manyjalpingu</option>
+								<option value="8708">Manyjilyjarra</option>
+								<option value="9303">Maori (Cook Island)</option>
+								<option value="9304">Maori (New Zealand)</option>
+								<option value="5205">Marathi</option>
+								<option value="8141">Maringarr</option>
+								<option value="8142">Marra</option>
+								<option value="8161">Marramaninyshi</option>
+								<option value="8234">Marrangu</option>
+								<option value="8166">Marridan (Maridan)</option>
+								<option value="8143">Marrithiyel</option>
+								<option value="8711">Martu Wangka</option>
+								<option value="8144">Matngala</option>
+								<option value="8111">Maung</option>
+								<option value="9205">Mauritian Creole</option>
+								<option value="8175">Mayali</option>
+								<option value="8402">Meriam Mir</option>
+								<option value="4299">Middle Eastern Semitic Languages, nec</option>
+								<option value="7107">Min Nan</option>
+								<option value="8804">Miriwoong</option>
+								<option value="8957">Mirning</option>
+								<option value="6303">Mon</option>
+								<option value="7902">Mongolian</option>
+								<option value="6399">Mon-Khmer, nec</option>
+								<option value="9258">Moro (Nuba Moro)</option>
+								<option value="8317">Morrobalama</option>
+								<option value="9503">Motu (HiriMotu)</option>
+								<option value="8512">Mudburra</option>
+								<option value="8146">Murrinh Patha</option>
+								<option value="8927">Muruwari</option>
+								<option value="8147">Na-kara</option>
+								<option value="8928">Narungga</option>
+								<option value="9306">Nauruan</option>
+								<option value="9228">Ndebele</option>
+								<option value="8148">Ndjébbana (Gunavidji)</option>
+								<option value="5206">Nepali</option>
+								<option value="8712">Ngaanyatjarra</option>
+								<option value="8151">Ngalakgan</option>
+								<option value="8152">Ngaliwurru</option>
+								<option value="8162">Ngandi</option>
+								<option value="8113">Ngan'gikurunggurr</option>
+								<option value="8514">Ngardi</option>
+								<option value="8805">Ngarinyin</option>
+								<option value="8515">Ngarinyman</option>
+								<option value="8931">Ngarluma</option>
+								<option value="8932">Ngarrindjeri</option>
+								<option value="8958">Ngatjumaya</option>
+								<option value="8281">Nhangu</option>
+								<option value="8289">Nhangu, nec</option>
+								<option value="9307">Niue</option>
+								<option value="9404">Norf’k-Pitcairn</option>
+								<option value="8599">Northern Desert Fringe Area Languages, nec</option>
+								<option value="1503">Norwegian</option>
+								<option value="9231">Nuer</option>
+								<option value="8153">Nungali</option>
+								<option value="8114">Nunggubuyu</option>
+								<option value="8933">Nyamal</option>
+								<option value="8934">Nyangumarta</option>
+								<option value="9232">Nyanja (Chichewa)</option>
+								<option value="8806">Nyikina</option>
+								<option value="8935">Nyungar</option>
+								<option value="9499">Oceanian Pidgins and Creoles, nec</option>
+								<option value="5216">Oriya</option>
+								<option value="9206">Oromo</option>
+								<option value="8999">Other Australian Indigenous Languages, nec</option>
+								<option value="7999">Other Eastern Asian Languages, nec</option>
+								<option value="3999">Other Eastern European Languages, nec</option>
+								<option value="6999">Other Southeast Asian Languages</option>
+								<option value="5999">Other Southern Asian Languages</option>
+								<option value="2999">Other Southern European Languages, nec</option>
+								<option value="4999">Other Southwest and Central Asian Languages, nec</option>
+								<option value="8299">Other Yolngu Matha, nec</option>
+								<option value="8936">Paakantyi</option>
+								<option value="9399">Pacific Austronesian Languages, nec</option>
+								<option value="8937">Palyku/Nyiyaparli</option>
+								<option value="6521">Pampangan</option>
+								<option value="9599">Papua New Guinea Languages, nec</option>
+								<option value="4102">Pashto</option>
+								<option value="4106">Persian (excluding Dari)</option>
+								<option value="8713">Pintupi</option>
+								<option value="8714">Pitjantjatjara</option>
+								<option value="3602">Polish</option>
+								<option value="2302">Portuguese</option>
+								<option value="5207">Punjabi</option>
+								<option value="8115">Rembarrnga</option>
+								<option value="8295">Rirratjingu</option>
+								<option value="8271">Ritharrngu</option>
+								<option value="6104">Rohingya</option>
+								<option value="3904">Romanian</option>
+								<option value="3905">Romany</option>
+								<option value="9312">Rotuman</option>
+								<option value="3402">Russian</option>
+								<option value="9308">Samoan</option>
+								<option value="1599">Scandinavian, nec</option>
+								<option value="3505">Serbian</option>
+								<option value="3507">Serbo-Croatian/Yugoslavian, so described</option>
+								<option value="9238">Seychelles Creole</option>
+								<option value="9233">Shilluk</option>
+								<option value="9207">Shona</option>
+								<option value="9799">Sign Languages, nec</option>
+								<option value="5208">Sindhi</option>
+								<option value="5211">Sinhalese</option>
+								<option value="3603">Slovak</option>
+								<option value="3506">Slovene</option>
+								<option value="9405">Solomon Islands Pijin</option>
+								<option value="9208">Somali</option>
+								<option value="6599">Southeast Asian Austronesian Languages, nec</option>
+								<option value="2303">Spanish</option>
+								<option value="9211">Swahili</option>
+								<option value="1504">Swedish</option>
+								<option value="6511">Tagalog</option>
+								<option value="6499">Tai, nec</option>
+								<option value="5103">Tamil</option>
+								<option value="4303">Tatar</option>
+								<option value="5104">Telugu</option>
+								<option value="6507">Tetum</option>
+								<option value="6402">Thai</option>
+								<option value="8318">Thaynakwith</option>
+								<option value="9261">Themne</option>
+								<option value="7901">Tibetan</option>
+								<option value="9234">Tigré</option>
+								<option value="9235">Tigrinya</option>
+								<option value="6508">Timorese</option>
+								<option value="8117">Tiwi</option>
+								<option value="8322">Tjungundji</option>
+								<option value="8722">Tjupany</option>
+								<option value="9504">Tok Pisin (Neomelanesian)</option>
+								<option value="9313">Tokelauan</option>
+								<option value="9311">Tongan</option>
+								<option value="9236">Tswana</option>
+								<option value="5105">Tulu</option>
+								<option value="4399">Turkic, nec</option>
+								<option value="4301">Turkish</option>
+								<option value="4304">Turkmen</option>
+								<option value="9314">Tuvaluan</option>
+								<option value="3403">Ukrainian</option>
+								<option value="5212">Urdu</option>
+								<option value="4305">Uygur</option>
+								<option value="4306">Uzbek</option>
+								<option value="6302">Vietnamese</option>
+								<option value="8163">Waanyi</option>
+								<option value="8272">Wagilak</option>
+								<option value="8164">Wagiman</option>
+								<option value="8938">Wajarri</option>
+								<option value="8516">Walmajarri</option>
+								<option value="8961">Waluwarra</option>
+								<option value="8154">Wambaya</option>
+								<option value="8715">Wangkajunga</option>
+								<option value="8962">Wangkangurru</option>
+								<option value="8716">Wangkatha</option>
+								<option value="8213">Wangurri</option>
+								<option value="8517">Wanyjirra</option>
+								<option value="8155">Wardaman</option>
+								<option value="8963">Wargamay</option>
+								<option value="8518">Warlmanpa</option>
+								<option value="8521">Warlpiri</option>
+								<option value="8717">Warnman</option>
+								<option value="8294">Warramiri</option>
+								<option value="8522">Warumungu</option>
+								<option value="1103">Welsh</option>
+								<option value="8964">Wergaia</option>
+								<option value="8622">Western Arrarnta</option>
+								<option value="8799">Western Desert Language, nec</option>
+								<option value="8304">Wik Mungkan</option>
+								<option value="8314">Wik Ngathan</option>
+								<option value="8941">Wiradjuri</option>
+								<option value="8807">Worla</option>
+								<option value="8808">Worrorra</option>
+								<option value="7106">Wu</option>
+								<option value="8247">Wubulkarra</option>
+								<option value="8811">Wunambal</option>
+								<option value="8251">Wurlaki</option>
+								<option value="9237">Xhosa</option>
+								<option value="8279">Yakuy, nec</option>
+								<option value="8718">Yankunytjatjara</option>
+								<option value="8282">Yan-Nhangu</option>
+								<option value="8165">Yanyuwa</option>
+								<option value="9315">Yapese</option>
+								<option value="8812">Yawuru</option>
+								<option value="1303">Yiddish</option>
+								<option value="8313">Yidiny</option>
+								<option value="8943">Yindjibarndi</option>
+								<option value="8944">Yinhawangka</option>
+								<option value="8945">Yorta Yorta</option>
+								<option value="9212">Yoruba</option>
+								<option value="8965">Yugambeh</option>
+								<option value="8721">Yulparija</option>
+								<option value="8403">Yumplatok (Torres Strait Creole)</option>
+								<option value="8321">Yupangathi</option>
+								<option value="6105">Zomi</option>
+								<option value="9213">Zulu</option>
+							</select>
+						</div>
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-10" class="has-close ax-tip d-none">
+								<p style="margin:0;"> If you speak more than one language, please indicate the one that is spoken most often </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-10">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-10 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row nationalityInfo">
+					<label for="suburbName" class="col-sm-3 col-form-label">English Proficiency: </label>
+					<div class="col-sm-8 d-flex">
+						<div class="select-wrap" style="width:80%;">
+							<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="ENGLISHPROFICIENCYID" id="ENGLISHPROFICIENCYID" style="">
+								<option value="">Select</option>
+								<option value="">Not Specified</option>
+								<option value="1">Very Well</option>
+								<option value="2">Well</option>
+								<option value="3">Not Well</option>
+								<option value="4">Not at all</option>
+							</select>
+						</div>
+						<div class="addTip pl-2">
+							<div data-role="popup" data-theme="b" id="tooltipPop-4-1" class="has-close ax-tip d-none">
+								<p style="margin:0;"> How well you speak English. </p>
+								<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-4">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+										<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+							<a class="ui-icon-info-4 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+									<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row emergencyInfo">
+					<div class="col-sm-3"></div>
+					<div class="customButton col-sm-8">
+						<button type="submit" class="buttonAddress buttonNationalitySubmit ui-icon-plus" id="button_nationality">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--End of Nationality Form-->
+<!--Schooling Form Started-->
+<div id="step5" class="step-form">
+	<div class="form-container">
+		<div class="form-header">
+			<h3>Schooling</h3>
+			<p>Step 05 of Step 07</p>
+		</div>
+		<div class="form-body contact-update" id="EducationalHistory_step">
+			<div class="info-field-detailed header_information">Secondary Education</div>
+			<div id="EducationalHistory_step" class="contact-update">
+				<form class="schoolingForm" method="PUT">
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1"> What is your highest completed school level?: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8 d-flex">
+							<div class="select-wrap" style="width:80%;">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="HIGHESTSCHOOLLEVELID" required="required" id="HIGHESTSCHOOLLEVELID" style="">
+									<option value="">Select</option>
+									<option value="2">Did not attend school</option>
+									<option value="8">Year 8 or Below</option>
+									<option value="9">Year 9</option>
+									<option value="10">Year 10</option>
+									<option value="11">Year 11</option>
+									<option value="12">Year 12</option>
+								</select>
+							</div>
+							<div class="addTip pl-2">
+								<div data-role="popup" data-theme="b" id="tooltipPop-1" class="has-close ax-tip d-none">
+									<p style="margin:0;"> If you are currently enrolled in secondary education, the Highest school level completed refers to the highest school level you have actually completed and not the level you are currently undertaking. For example, if you are currently in Year 10 the Highest school level completed is Year 9. </p>
+									<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-1">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+											<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+										</svg>
+									</a>
+								</div>
+								<a class="ui-icon-info-1 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+										<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1">Are you still enrolled in secondary or senior secondary education?: </label>
+						<div class="col-sm-8">
+							<div class="select-wrap">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="ATSCHOOLFLAG" id="ATSCHOOLFLAG" style="">
+									<option value="">Select</option>
+									<option value="">Not Specified</option>
+									<option value="true">Yes</option>
+									<option value="false">No</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="info-field-detailed header_information">Previous qualifications achieved</div>
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1">Have you successfully completed any post-secondary education?: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8">
+							<div class="select-wrap">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="PRIOREDUCATIONSTATUS" required="required" id="PRIOREDUCATIONSTATUS" style="">
+									<option value="">Select</option>
+									<option value="true">Yes</option>
+									<option value="false">No</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row nationalityInfo prior-education d-none">
+						<label for="suburbName" class="col-sm-4 col-form-label-1">Prior Education: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8">
+							<div class="enroller-modifier-holder" tabindex="6">
+								<a class="ui-icon-info ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="display: inline-block;"></a>
+								<div class="col-sm-4 modifier-checkbox ">
+									<div class="col-sm-4 checkbox-holder">
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_008"> Bachelor Degree or Higher Degree level <input type="checkbox" id="PRIOREDUCATIONIDS_008" value="008" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_410"> Advanced Diploma or Associate Degree Level <input type="checkbox" id="PRIOREDUCATIONIDS_410" value="410" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_420"> Diploma Level <input type="checkbox" id="PRIOREDUCATIONIDS_420" value="420" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_511"> Certificate IV <input type="checkbox" id="PRIOREDUCATIONIDS_511" value="511" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_514"> Certificate III <input type="checkbox" id="PRIOREDUCATIONIDS_514" value="514" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_521"> Certificate II <input type="checkbox" id="PRIOREDUCATIONIDS_521" value="521" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_524"> Certificate I <input type="checkbox" id="PRIOREDUCATIONIDS_524" value="524" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+										<label class="enrol-checkbox-label-2 ui-btn" for="PRIOREDUCATIONIDS_990"> Other education (including certificates or overseas qualifications not listed above) <input type="checkbox" id="PRIOREDUCATIONIDS_990" value="990" class="PRIOREDUCATIONIDS-checkbox enroller-field-input-2">
+										</label>
+									</div>
+									<div class="col-sm-4 selection-holder">
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_008_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_008">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_008A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_008E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_008I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_410_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_410">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_410A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_410E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_410I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_420_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_420">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_420A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_420E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_420I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_511_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_511">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_511A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_511E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_511I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_514_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_514">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_514A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_514E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_514I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_521_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_521">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_521A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_521E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_521I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_524_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_524">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_524A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_524E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_524I">International</option>
+										</select>
+										<select class="enroller-field-input-2 PRIOREDUCATIONIDS-modifier enroller-select-chosen chosen-markup" id="PRIOREDUCATIONIDS_990_modifier">
+											<option value="" id="PRIOREDUCATIONIDS_990">Not Specified</option>
+											<option value="A" id="PRIOREDUCATIONIDS_990A">Australian Qualification</option>
+											<option value="E" id="PRIOREDUCATIONIDS_990E">Australian Equivalent</option>
+											<option value="I" id="PRIOREDUCATIONIDS_990I">International</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row emergencyInfo">
+						<div class="col-sm-4"></div>
+						<div class="customButton col-sm-8">
+							<button type="submit" class="buttonAddress buttonSchoolingSubmit ui-icon-plus" id="button_schooling">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--End of Schooling Form-->
+	<!--Additional Details Started-->
+	<div id="step6" class="step-form">
+		<div class="form-container">
+			<div class="form-header">
+				<h3>Additional Details</h3>
+				<p>Step 06 of 07</p>
+			</div>
+			<div class="form-body" id="AdditionalDetails_step">
+				<div class="info-field-detailed header_information">Disabilities</div>
+				<form class="additionalDetailsForm" method="PUT">
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1">Do you consider yourself to have a disability, impairment or long-term condition? : <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8">
+							<div class="select-wrap">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="DISABILITYFLAG" required="required" id="DISABILITYFLAG" style="">
+									<option value="">Select</option>
+									<option value="false">No</option>
+									<option value="true">Yes</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row nationalityInfo disablities-list" style="display:none;">
+						<label for="suburbName" class="col-sm-4 col-form-label-1"> If you indicated the presence of a disability, impairment or long-term condition, please select the area(s) in the following list: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8">
+							<div class="enroller-checkbox-holder">
+								<label for="DISABILITYTYPEIDS_11" class="enrol-checkbox-label-1 ui-btn"> Hearing / Deafness <input type="checkbox" id="DISABILITYTYPEIDS_11" value="11" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_12" class="enrol-checkbox-label-1 ui-btn"> Physical <input type="checkbox" id="DISABILITYTYPEIDS_12" value="12" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_13" class="enrol-checkbox-label-1 ui-btn"> Intellectual <input type="checkbox" id="DISABILITYTYPEIDS_13" value="13" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_14" class="enrol-checkbox-label-1 ui-btn"> Learning <input type="checkbox" id="DISABILITYTYPEIDS_14" value="14" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_15" class="enrol-checkbox-label-1 ui-btn"> Mental illness <input type="checkbox" id="DISABILITYTYPEIDS_15" value="15" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_16" class="enrol-checkbox-label-1 ui-btn"> Acquired Brain Impairment <input type="checkbox" id="DISABILITYTYPEIDS_16" value="16" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_17" class="enrol-checkbox-label-1 ui-btn"> Vision <input type="checkbox" id="DISABILITYTYPEIDS_17" value="17" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_18" class="enrol-checkbox-label-1 ui-btn"> Medical condition <input type="checkbox" id="DISABILITYTYPEIDS_18" value="18" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+								<label for="DISABILITYTYPEIDS_19" class="enrol-checkbox-label-1 ui-btn"> Other <input type="checkbox" id="DISABILITYTYPEIDS_19" value="19" class="DISABILITYTYPEIDS-checkbox enroller-field-input-1">
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="info-field-detailed header_information">Additional Details</div>
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1">Indigenous Status: </label>
+						<div class="col-sm-8">
+							<div class="select-wrap">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="INDIGENOUSSTATUSID" id="INDIGENOUSSTATUSID" style="">
+									<option value="">Select</option>
+									<option value="4">No</option>
+									<option value="1">Aboriginal</option>
+									<option value="2">Torres Strait Islander</option>
+									<option value="3">Aboriginal &amp; Torres Strait Islander</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label-1"> Of the following categories, which best describes your current employment status?: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8 d-flex ">
+							<div class="select-wrap" style="width:80%;">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="LABOURFORCEID" required="required" id="LABOURFORCEID" style="">
+									<option value="">Select</option>
+									<option value="1">Full-time employee</option>
+									<option value="2">Part-time employee</option>
+									<option value="3">Self-employed - not employing others</option>
+									<option value="4">Self-employed - employing others</option>
+									<option value="5">Employed - unpaid worker in a family business</option>
+									<option value="6">Unemployed - Seeking full-time work</option>
+									<option value="7">Unemployed - Seeking part-time work</option>
+									<option value="8">Unemployed - Not Seeking employment</option>
+								</select>
+							</div>
+							<div class="addTip pl-2">
+								<div data-role="popup" data-theme="b" id="tooltipPop-2" class="has-close ax-tip d-none">
+									<p style="margin:0;"> For casual, seasonal, contract and shift work, use the current number of hours worked per week to determine whether full time (35 hours or more per week) or part-time employed (less than 35 hours per week). </p>
+									<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+											<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+										</svg>
+									</a>
+								</div>
+								<a class="ui-icon-info-2 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+										<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row emergencyInfo">
+						<div class="col-sm-4"></div>
+						<div class="customButton col-sm-8">
+							<button type="button" class="buttonAddress buttonAdditionalSubmit ui-icon-plus" id="button_details">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--End of Additionally Details-->
+	<!--Study Reason Form Started-->
+	<div id="step7" class="step-form">
+		<div class="form-container">
+			<div class="form-header">
+				<h3>Study Reason</h3>
+				<p>Step 07 of 08</p>
+			</div>
+			<div class="form-body contact-update" id="StudyReason_step">
+				<form class="studyReasonForm" method="PUT">
+					<div class="form-group row nationalityInfo">
+						<label for="suburbName" class="col-sm-4 col-form-label">Study Reason: <span class="text-danger">*</span>
+						</label>
+						<div class="col-sm-8 d-flex">
+							<div class="select-wrap" style="width:80%;">
+								<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="STUDYREASONID" required="required" id="STUDYREASONID" style="">
+									<option value="">Select</option>
+									<option value="1">To get a job</option>
+									<option value="2">To develop my existing business</option>
+									<option value="3">To start my own business</option>
+									<option value="4">To try for a different career</option>
+									<option value="5">To get a better job or promotion</option>
+									<option value="6">It was a requirement of my job</option>
+									<option value="7">I wanted extra skills for my job</option>
+									<option value="8">To get into another course of study</option>
+									<option value="11">Other reasons</option>
+									<option value="12">For personal interest or self-development</option>
+									<option value="13">To get skills for community/voluntary work</option>
+								</select>
+							</div>
+							<div class="addTip pl-2">
+								<div data-role="popup" data-theme="b" id="tooltipPop-9" class="has-close ax-tip d-none">
+									<p style="margin:0;"> Of the following categories, select the one which BEST describes the main reason you are undertaking this course/traineeship/apprenticeship </p>
+									<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-9">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+											<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+										</svg>
+									</a>
+								</div>
+								<a class="ui-icon-info-9 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+										<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row emergencyInfo">
+						<div class="col-sm-4"></div>
+						<div class="customButton col-sm-8">
+							<button type="submit" class="buttonAddress buttonStudySubmit ui-icon-plus" id="button_study">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--End of Study Reason Form-->
+	<!--Declaration & Privacy Form Start-->
+	<div id="step8" class="step-form">
+		<div class="form-container">
+			<div class="form-header">
+				<h3>Declaration & Privacy </h3>
+				<p>Step 08 of 08</p>
+			</div>
+			<div class="form-body contact" id="TermsConditions_step">
+				<div class="enroller-blurb-holder-1 ui-btn ui-btn-icon-left ui-icon-info">
+					<div class="Privacy"> Privacy Notice </div>
+					<br>
+					<div class="bold">Why we collect your personal information</div>
+					<div> As a registered training organisation (RTO), we collect your personal information so we can process and manage your enrolment in a vocational education and training (VET) course with us. <br>
+						<br> Failure to provide your personal information may mean that it is not possible for you to enrol. <br>
+						<br>
+					</div>
+					<div class="bold">How we use your personal information</div>
+					<div> We use your personal information to enable us to deliver VET courses to you, and otherwise, as needed, to comply with our obligations as an RTO. <br>
+						<br>
+					</div>
+					<div class="bold">How we disclose your personal information</div>
+					<div> We are required by law (under the National Vocational Education and Training Regulator Act 2011 (Cth) (NVETR Act)) to disclose the personal information we collect about you to the National VET Data Collection kept by the National Centre for Vocational Education Research Ltd (NCVER). The NCVER is responsible for collecting, managing, analysing and communicating research and statistics about the Australian VET sector. <br>
+						<br> We are also authorised by law (under the NVETR Act) to disclose your personal information to the relevant state or territory training authority. <br>
+						<br>
+					</div>
+					<div class="bold">How the NCVER and other bodies handle your personal information</div>
+					<div> The NCVER will collect, hold, use and disclose your personal information in accordance with the law, including the Privacy Act 1988 (Cth) (Privacy Act) and the NVETR Act. Your personal information may be used and disclosed by NCVER for purposes that include populating authenticated VET transcripts; administration of VET; facilitation of statistics and research relating to education, including surveys and data linkage; and understanding the VET market. <br>
+						<br> The NCVER is authorised to disclose information to the Australian Government Department of Education, Skills and Employment (DESE), Commonwealth authorities, State and Territory authorities (other than registered training organisations) that deal with matters relating to VET and VET regulators for the purposes of those bodies, including to enable:
+					</div>
+					<ul>
+						<li>Administration of VET, including program administration, regulation, monitoring and evaluation</li>
+						<li>Facilitation of statistics and research relating to education, including surveys and data linkage</li>
+						<li>Understanding how the VET market operates, for policy, workforce planning and consumer information.</li>
+					</ul>
+					<div> The NCVER may also disclose personal information to persons engaged by NCVER to conduct research on NCVER's behalf. <br>
+						<br> The NCVER does not intend to disclose your personal information to any overseas recipients. <br>
+						<br> For more information about how the NCVER will handle your personal information please refer to the NCVER's Privacy Policy at <a href="http://www.ncver.edu.au/privacy" target="_blank">www.ncver.edu.au/privacy</a>. <br>
+						<br> If you would like to seek access to or correct your information, in the first instance, please contact your RTO using the contact details listed below. <br>
+						<br> DESE is authorised by law, including the Privacy Act and the NVETR Act, to collect, use and disclose your personal information to fulfil specified functions and activities. For more information about how the DESE will handle your personal information, please refer to the DESE VET Privacy Notice at <a href="https://www.dese.gov.au/national-vet-data/vet-privacy-notice" target="_blank">https://www.dese.gov.au/national-vet-data/vet-privacy-notice</a>. <br>
+						<br> Please refer to the additional State or Territory Authority Privacy Notice included in this application process should this be relevant to your application. <br>
+						<br>
+					</div>
+					<div class="bold">Surveys</div>
+					<div> You may receive a student survey which may be run by a government department or an NCVER employee, agent, third-party contractor or another authorised agency. Please note you may opt out of the survey at the time of being contacted. <br>
+						<br>
+					</div>
+					<div class="bold">Contact information</div>
+					<div> At any time, you may contact National Health & Safety College to: </div>
+					<ul>
+						<li>- request access to your personal information</li>
+						<li>- correct your personal information</li>
+						<li>- make a complaint about how your personal information has been handled</li>
+						<li>- ask a question about this Privacy Notice</li>
+					</ul>
+					<br>
+					<div> Phone: RTO phone number <br> Email: <a href="mailto:admin@45.63.29.80">admin@45.63.29.80</a>
+						<br>
+						<a href="https://nhsc170-my.sharepoint.com/:b:/g/personal/admin_nhsc_edu_au/EdWqImVtOSROsDJx_rQOoBoBv_FYy8q2rrfU_K0frWOwDw?e=5D4x4h" target="_blank">National Health & Safety College Student Handbook</a>
+					</div>
+				</div>
+				<div class="terms-form">
+					<form class="declarationPrivacyForm" method="PUT">
+						<div class="form-group row nationalityInfo">
+							<label for="suburbName" class="col-sm-4 col-form-label">Student Declaration: <span class="text-danger">*</span>
+							</label>
+							<div class="col-sm-6">
+								<div class="select-wrap">
+									<select data-native-menu="false" data-role="none" class="enroller-field-input enroller-select-chosen enroller-select-multi chosen-markup" data-enhance="none" name="TermAgreement" required="required" id="TermAgreement" style="">
+										<option value="">Select</option>
+										<option value="Agreed">I Agree</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row nationalityInfo">
+							<label for="suburbName" class="col-sm-4 col-form-label">Student Signature: <span class="text-danger">*</span>
+							</label>
+							<div class="col-sm-6">
+								<div class="enroller-field-signature enroller-field-input ui-input-text ui-body-inherit ui-corner-all ui-btn ui-shadow-inset signature-markup" id="StudentSignature" style="height: 100px; display: block;">
+									<canvas id="jSignature" width="350" style="margin: 0px; padding: 0px; border: none; height: 88px; width: 100%; cursor:pointer;" height="88"></canvas>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="col-sm-4 enroller-signature-controls">
+									<a type="button" class="signature-undo-last ui-body ui-btn" id="undo-all-1" style="clear: left;">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 20px; cursor:pointer;">
+											<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+											<path d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z" />
+										</svg>
+									</a>
+									<a type="button" class="signature-clear-all ui-body ui-btn" id="clear-all-1" style="clear: left;">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="height: 20px; cursor:pointer;">
+											<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+											<path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row nationalityInfo">
+							<label for="suburbName" class="col-sm-4 col-form-label">Parent/Guardian Signature: </label>
+							<div class="col-sm-6">
+								<div class="enroller-field-signature enroller-field-input ui-input-text ui-body-inherit ui-corner-all ui-btn ui-shadow-inset signature-markup" id="ParentSignature" style="height: 100px; display: block;">
+									<canvas id="jSignature2" width="350" style="margin: 0px; padding: 0px; border: none; height: 88px; width: 100%; cursor:pointer;" height="88"></canvas>
+								</div>
+							</div>
+							<div class="col-sm-2 parentControl">
+								<div class="col-sm-4 enroller-signature-controls">
+									<a type="button" class="signature-undo-last ui-body ui-btn" id="undo-all-2" style="clear: left;">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 20px; cursor:pointer;">
+											<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+											<path d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z" />
+										</svg>
+									</a>
+									<a type="button" class="signature-clear-all ui-body ui-btn" id="clear-all-2" style="clear: left;">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="height: 20px; cursor:pointer;">
+											<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+											<path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+										</svg>
+									</a>
+								</div>
+								<div class="col-sm-2">
+									<div data-role="popup" data-theme="b" id="tooltipPop-3" class="has-close ax-tip d-none">
+										<p style="margin:0;">Parental/guardian consent is required for all students under the age of 18.</p>
+										<a class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right ax-pop-close-3">
+											<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+												<path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+											</svg>
+										</a>
+									</div>
+									<a class="ui-icon-info-3 ui-nodisc-icon enroller-tooltip ui-btn-icon-notext ui-btn" style="cursor:pointer;">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2a7ead">
+											<path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row emergencyInfo">
+							<div class="col-sm-4"></div>
+							<div class="customButton col-sm-6">
+								<button type="submit" class="buttonAddress buttonDeclarationSubmit ui-icon-plus" id="button_declaration">Save</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
